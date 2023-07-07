@@ -1,5 +1,15 @@
+import { A } from "@solidjs/router";
 import Layout from "./components/ui/Layout";
+import { useAuth } from "./contexts/auth";
 
-const App = () => <Layout>Here is some content</Layout>;
+const Home = () => {
+  const [user] = useAuth();
+  return (
+    <Layout title="Home - FlightOwl" description="">
+      <h1>{user()?.fname}</h1>
+      <A href="/login">To login page</A>
+    </Layout>
+  );
+};
 
-export default App;
+export default Home;

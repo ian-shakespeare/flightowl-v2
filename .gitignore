@@ -1,2 +1,11 @@
+# Node
 node_modules
 dist
+
+# Environment variables
+*.env*
+
+# Editors
+*.swp*
+.vscode
+
