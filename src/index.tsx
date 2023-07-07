@@ -3,9 +3,10 @@ import "./index.css";
 import { render } from "solid-js/web";
 import { MetaProvider } from "@solidjs/meta";
 import { Route, Router, Routes } from "@solidjs/router";
-import Home from "./Home";
-import Login from "./Login";
+import Home from "./routes/Home";
+import Login from "./routes/Login";
 import { AuthProvider } from "./contexts/auth";
+import Flights from "./routes/Flights";
 
 render(
   () => (
@@ -15,6 +16,7 @@ render(
           <Routes>
             <Route path="/" component={Home} />
             <Route path="/login" component={Login} />
+            <Route path="/flights" component={Flights} />
           </Routes>
         </AuthProvider>
       </MetaProvider>

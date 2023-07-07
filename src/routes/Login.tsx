@@ -1,5 +1,5 @@
-import Layout from "./components/ui/Layout";
-import { signIn } from "./utils/supabase";
+import Layout from "../components/ui/Layout";
+import { signIn } from "../utils/supabase";
 
 const Login = () => {
   const handleSignIn = async () => {

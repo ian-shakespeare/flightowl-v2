@@ -10,7 +10,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/events": "^3.0.0",
     "@types/express": "^4.17.17",
+    "@types/node": "^20.4.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "solid-devtools": "^0.27.3",
@@ -23,6 +25,8 @@
     "@solidjs/meta": "^0.28.5",
     "@solidjs/router": "^0.8.2",
     "@supabase/supabase-js": "^2.26.0",
+    "amadeus": "^8.1.0",
+    "events": "^3.3.0",
     "solid-js": "^1.7.6"
   }
 }
