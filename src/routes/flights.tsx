@@ -39,14 +39,15 @@ const Flights = () => {
       },
     },
   };
-  const { data, error } = api.amadeus.getFlightOffers.useQuery(() => params);
+  const flights = !profile
+    ? null
+    : api.amadeus.getFlightOffers.useQuery(() => params);
   return (
     <main>
       <Title>Search - FlightOwl</Title>
-      <Show when={!!profile()}>
-        <Show when={!error} fallback={<>{error!.data}</>}>
-          {JSON.stringify(data)}
-        </Show>
+      <h1 class="text-3xl">Flights Page</h1>
+      <Show when={!!flights} fallback="Error finding flights">
+        {JSON.stringify(flights)}
       </Show>
     </main>
   );

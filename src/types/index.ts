@@ -10,6 +10,7 @@ export type Profile = {
 };
 
 export type Error = {
+  code: number;
   name: string;
   body: string;
   location: string;
