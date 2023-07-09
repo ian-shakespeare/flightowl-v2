@@ -1,7 +1,6 @@
 // @refresh reload
 import { Suspense } from "solid-js";
 import {
-  A,
   Body,
   ErrorBoundary,
   FileRoutes,
@@ -14,25 +13,26 @@ import {
 } from "solid-start";
 import { api, queryClient } from "~/utils/api";
 import "./root.css";
+import { AuthProvider } from "./contexts/auth";
 
 export default function Root() {
   return (
     <Html lang="en">
       <Head>
-        <Title>SolidStart - Bare</Title>
+        <Title>FlightOwl</Title>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body>
         <Suspense>
           <api.Provider queryClient={queryClient}>
-            <ErrorBoundary>
-              <A href="/">Index</A>
-              <A href="/about">About</A>
-              <Routes>
-                <FileRoutes />
-              </Routes>
-            </ErrorBoundary>
+            <AuthProvider profile={null}>
+              <ErrorBoundary>
+                <Routes>
+                  <FileRoutes />
+                </Routes>
+              </ErrorBoundary>
+            </AuthProvider>
           </api.Provider>
         </Suspense>
         <Scripts />
