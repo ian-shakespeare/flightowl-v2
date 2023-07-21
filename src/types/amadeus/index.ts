@@ -1,7 +1,9 @@
+import { CurrencyCode } from "../enums";
+
 export interface FlightOfferSearchResult {
   meta: Meta;
   data: Daum[];
-  dictionaries: Record<string, Record<string, string>>;
+  dictionaries: Dictionaries;
 }
 
 export interface Meta {
@@ -126,4 +128,11 @@ export interface FareDetailsBySegment {
 
 export interface IncludedCheckedBags {
   quantity: number;
+}
+
+export interface Dictionaries {
+  locations: Record<string, { cityCode: string; countryCode: string }>;
+  aircraft: Record<string, string>;
+  currencies: Record<CurrencyCode, string>;
+  carriers: Record<string, string>;
 }
